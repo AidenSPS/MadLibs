@@ -96,13 +96,6 @@ function nextPOS(){
   let storyshow = document.getElementById("storyShow");
   storyshow.innerHTML = modified;
 }
-/*Done with part of speech entry, goes to player.html
-    @params none
-    @return none
-*/
-function donePOS(){
-    document.location = 'player.html'
-}
 
 /* Function Make Replaced String  (changes.html)
   * Integrates POS substitutions into modified string
@@ -127,6 +120,47 @@ function makeReplacedString(){
   return modified;
 }
 
+/*Player
+    @params none
+    @return none
+*/
+function donePOS(){ //Sends us to player.html, and brings over story
+    localStorage.setItem('replacements', JSON.stringify(replacements));
+    document.location = 'player.html'
+
+}
+/* Function playerSetup (player.html)
+  * Set up player.html dashboard with body onload
+  * @param none
+  * @returns none
+  * Note: prompt player with the part of speech and recieve replacement words.
+  */
+function playerSetup(){
+  window.header.innerHTML="<h1>Mad Libs</h1><h2></h2><p></p>";
+  instructions = header.getElementsByTagName("h2")[0];
+  instructions.innerHTML=("Enter replacement words");
+  instructions = header.getElementsByTagName("p")[0];
+  instructions.innerHTML=("Find a wacky word to replace, can be anything within the part of speech that is given.");
+  //Done Button
+  let nextButton = document.createElement("button");
+  nextButton.setAttribute("id","done");
+  nextButton.setAttribute("onClick","nextReplace()");
+  nextButton.innerText = "Next";
+  window.actionbox.appendChild(nextButton);
+  //Div that displays the part of speech
+  let pOS = document.createElement("div");
+  pOS.setAttribute("id","POS");
+  window.actionbox.appendChild(pOS);
+  //usersInput
+  let replaceWord = document.createElement("input");
+  replaceWord.setAttribute("id","newWord");
+  window.actionbox.appendChild(replaceWord);
+  firstReplacement();
+}
+function firstReplacement(){
+    let pOS = document.getElementById("POS")
+    pOS.innerText = "verb";
+}
 /* For reference to multiplication
  * localStorage.setItem('original', original);
  * localStorage.setItem('story', JSON.stringify(story));

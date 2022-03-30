@@ -1,0 +1,9 @@
+
+3/30/22 from class, { //How to code the replacements array, replacements is an array of arrays of the replacement words var replacements = [["1"," ",POS]];
+pull the POS from replacements
+replace[0][2]
+is POS
+newWord.value
+stick it into replace[0][1];
+new replacements.
+}
