@@ -135,18 +135,12 @@ function donePOS(){ //Sends us to player.html, and brings over story
   * @returns none
   * Note: prompt player with the part of speech and recieve replacement words.
   */
-function playerSetup(){
+function playerSetup(){ //Sets up the Player's Interface
   window.header.innerHTML="<h1>Mad Libs</h1><h2></h2><p></p>";
   instructions = header.getElementsByTagName("h2")[0];
   instructions.innerHTML=("Enter replacement words");
   instructions = header.getElementsByTagName("p")[0];
   instructions.innerHTML=("Find a wacky word to replace, can be anything within the part of speech that is given.");
-  //Done Button
-  let nextButton = document.createElement("button");
-  nextButton.setAttribute("id","done");
-  nextButton.setAttribute("onClick","nextReplace()");
-  nextButton.innerText = "Next";
-  window.actionbox.appendChild(nextButton);
   //Div that displays the part of speech
   let pOS = document.createElement("div");
   pOS.setAttribute("id","POS");
@@ -155,18 +149,16 @@ function playerSetup(){
   let replaceWord = document.createElement("input");
   replaceWord.setAttribute("id","newWord");
   window.actionbox.appendChild(replaceWord);
+  //Done Button
+  let nextButton = document.createElement("button");
+  nextButton.setAttribute("id","done");
+  nextButton.setAttribute("onClick","nextReplace()");
+  nextButton.innerText = "Next";
+  window.actionbox.appendChild(nextButton);
+
   firstReplacement();
 }
 function firstReplacement(){
-    let pOS = document.getElementById("POS")
-    pOS.innerText = "verb";
+  let pOS = document.getElementById("POS")
+  pOS.innerText = "verb";
 }
-/* For reference to multiplication
- * localStorage.setItem('original', original);
- * localStorage.setItem('story', JSON.stringify(story));
- * localStorage.setItem('replacements', JSON.stringify(replacements));
- * story = JSON.parse(localStorage.getItem("story"));
- * replacements = JSON.parse(localStorage.getItem('replacements'));
- * original = localStorage.getItem("original");
- */
-
