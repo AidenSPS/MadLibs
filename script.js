@@ -125,9 +125,8 @@ function makeReplacedString(){
     @return none
 */
 function donePOS(){ //Sends us to player.html, and brings over story
-    localStorage.setItem('replacements', JSON.stringify(replacements));
-    document.location = 'player.html'
-
+  localStorage.setItem('replacements', JSON.stringify(replacements));
+  document.location = 'player.html'
 }
 /* Function playerSetup (player.html)
   * Set up player.html dashboard with body onload
@@ -136,29 +135,32 @@ function donePOS(){ //Sends us to player.html, and brings over story
   * Note: prompt player with the part of speech and recieve replacement words.
   */
 function playerSetup(){ //Sets up the Player's Interface
+  //Title Code
   window.header.innerHTML="<h1>Mad Libs</h1><h2></h2><p></p>";
   instructions = header.getElementsByTagName("h2")[0];
   instructions.innerHTML=("Enter replacement words");
   instructions = header.getElementsByTagName("p")[0];
   instructions.innerHTML=("Find a wacky word to replace, can be anything within the part of speech that is given.");
-  //Div that displays the part of speech
+
+  //Div that displays the new modified story with all the parts of speech replacing the words that were initially there
   let pOS = document.createElement("div");
   pOS.setAttribute("id","POS");
   window.actionbox.appendChild(pOS);
-  //usersInput
+
+  //usersInput that changes the value on the screen with the input's value
   let replaceWord = document.createElement("input");
   replaceWord.setAttribute("id","newWord");
   window.actionbox.appendChild(replaceWord);
+
   //Done Button
   let nextButton = document.createElement("button");
   nextButton.setAttribute("id","done");
   nextButton.setAttribute("onClick","nextReplace()");
   nextButton.innerText = "Next";
   window.actionbox.appendChild(nextButton);
-
   firstReplacement();
 }
-function firstReplacement(){
-  let pOS = document.getElementById("POS")
+function firstReplacement(){ //This is going to display the first modified item in the JSON.stringify array from function donePOS()
+  let pOS = document.getElementById("POS");
   pOS.innerText = "verb";
 }
