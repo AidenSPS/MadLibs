@@ -18,3 +18,9 @@ new replacements.
 	 * original = localStorage.getItem("original");
 	 */
 }
+
+4.11.22{
+	localStorage.setitem uses a keyWord ('replacements'), and a keyValue(JSON.stringify(blahblahblah));
+	localStorage.getItem gets the value of the keyWord used by localStorage.setItem ('replacements');
+	
+}

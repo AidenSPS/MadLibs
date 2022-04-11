@@ -126,7 +126,7 @@ function makeReplacedString(){
 */
 function donePOS(){ //Sends us to player.html, and brings over story
   localStorage.setItem('replacements', JSON.stringify(replacements));
-  document.location = 'player.html'
+  document.location = 'player.html';
 }
 /* Function playerSetup (player.html)
   * Set up player.html dashboard with body onload
