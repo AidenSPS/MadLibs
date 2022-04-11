@@ -9,5 +9,12 @@ new replacements.
 }
 
 4/4/22{
-	
+	/* For reference to multiplication
+	 * localStorage.setItem('original', original);
+	 * localStorage.setItem('story', JSON.stringify(story));
+	 * localStorage.setItem('replacements', JSON.stringify(replacements));
+	 * story = JSON.parse(localStorage.getItem("story"));
+	 * replacements = JSON.parse(localStorage.getItem('replacements'));
+	 * original = localStorage.getItem("original");
+	 */
 }
