@@ -143,12 +143,13 @@ function playerSetup(){ //Sets up the Player's Interface
   instructions.innerHTML=("Find a wacky word to replace, can be anything within the part of speech that is given.");
 
   //Div that displays the new modified story with all the parts of speech replacing the words that were initially there
-  let pOS = document.createElement("div");
-  pOS.setAttribute("id","POS");
-  window.actionbox.appendChild(pOS);
+  let posDiv = document.createElement("div");
+  posDiv.setAttribute("id","posDiv");
+  window.actionbox.appendChild(posDiv);
 
   //usersInput that changes the value on the screen with the input's value
   let replaceWord = document.createElement("input");
+  replaceWord.value = "verb";
   replaceWord.setAttribute("id","newWord");
   window.actionbox.appendChild(replaceWord);
 
@@ -161,8 +162,8 @@ function playerSetup(){ //Sets up the Player's Interface
   firstReplacement();
 }
 
-function firstReplacement(){ //This is going to display the first modified item in the JSON.stringify array from function donePOS()
-  let pOS = document.getElementById("POS");
+function firstReplacement(){ //This is going to display the first modified item in the JSON.stringify array from function donePOS();
+  let posDivVal = document.getElementById("posDiv");
   let replacements = localStorage.getItem('relpacements');
-  pOS.innerText = replacements[0]; //Visits notes for more information
+  posDivVal.innerHTML = "testPOS"; //Visits notes for more information
 }

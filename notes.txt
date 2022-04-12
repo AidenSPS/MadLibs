@@ -29,3 +29,23 @@ new replacements.
 		how do we get the story to the next page. Through local storage. We need to set the localStorage of story to a keyWord and the value of story. (JSON.stringify?).
 	}
 }
+
+4.12.22{
+	maybe localStorage.setItem('replacements', JSON.stringify(replacements)) needs to be a global variable
+		Question{ 
+		Thinking false because if this is a global variable, will bring over an empty array prior to the array being filled. 
+			ANSWER{
+			 if the replacements array isn't populated prior to JSON.stringify method in place, it will carry over a blank array
+				EXAMPLE{
+					if you have an array like var myJSON = ["My",[1,"Dog","Noun"],"Has","Fleas"], you will have a string called "["My",[1,"Dog","Noun"],"Has","Fleas"]" once stringified. 
+				} 
+			}
+		}
+
+	PROBLEM{
+		REPLACEMENTS changes are not getting pushed into the replacements array in function "nextPOS()", nextPOS() job is going to populate the replacements array and going into the localStorage to JSON.stringifiy the replacements array. Transfering the array (object), into a new page, kept in the browser and stored into the browser. However, need to convert the stringified array back into an object (array that you can pull data from);
+	}
+	HOW TO FIX{
+		look into nextPOS() to find the solution and then use the localStorage to get replacements stringified array so it is ready to be unstringified into firstReplacements();
+	}
+}
