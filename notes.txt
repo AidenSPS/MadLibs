@@ -23,4 +23,9 @@ new replacements.
 	localStorage.setitem uses a keyWord ('replacements'), and a keyValue(JSON.stringify(blahblahblah));
 	localStorage.getItem gets the value of the keyWord used by localStorage.setItem ('replacements');
 	
+	Questions:{ for (pOS.innerText = something)
+		do we need to return something for donePOS();? Thinking that we need to return the string of the new word. 
+
+		how do we get the story to the next page. Through local storage. We need to set the localStorage of story to a keyWord and the value of story. (JSON.stringify?).
+	}
 }

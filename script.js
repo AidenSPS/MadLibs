@@ -160,7 +160,9 @@ function playerSetup(){ //Sets up the Player's Interface
   window.actionbox.appendChild(nextButton);
   firstReplacement();
 }
+
 function firstReplacement(){ //This is going to display the first modified item in the JSON.stringify array from function donePOS()
   let pOS = document.getElementById("POS");
-  pOS.innerText = "verb";
+  let replacements = localStorage.getItem('relpacements');
+  pOS.innerText = replacements[0]; //Visits notes for more information
 }
