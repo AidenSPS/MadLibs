@@ -84,7 +84,7 @@ function makeNumberedString(){
   * @returns none
   * Note: OrigWord is for error checking, but error check not yet implemented
   */
-function nextPOS(){
+function nextPOS(){ //THIS IS THE PROBLEM, NOT POPULATING REPLACEMENTS ARRAY 
   let Index = document.getElementById("index").value;
   let OrigWord = document.getElementById("origWord").value;
   let pOS = document.getElementById("POS").value;
@@ -125,6 +125,7 @@ function makeReplacedString(){
     @return none
 */
 function donePOS(){ //Sends us to player.html, and brings over story
+  //need to carry over replacements
   localStorage.setItem('replacements', JSON.stringify(replacements));
   document.location = 'player.html';
 }
