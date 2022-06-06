@@ -3,6 +3,7 @@ var original = null;
 var story = [];
 var replacements = [];
 var modified = null;
+var replaceIndex = 1;
 
 /* Function indexSetup  (index.html)
   * Set up index.html dashboard with body onload
@@ -56,6 +57,7 @@ function changesSetup(){
   let storyshow = document.getElementById("storyShow");
   story = JSON.parse(localStorage.getItem("story"));
   storyshow.innerHTML=makeNumberedString();
+
   //Done Button
   let doneButton = document.createElement("button");
   doneButton.setAttribute("id","done");
@@ -148,9 +150,8 @@ function playerSetup(){ //Sets up the Player's Interface
   posDiv.setAttribute("id","posDiv");
   window.actionbox.appendChild(posDiv);
 
-  //usersInput that changes the value on the screen with the input's value
+  //Tells the user to type in a POS (verb,noun,adjective,etc...);
   let replaceWord = document.createElement("input");
-  replaceWord.value = "verb";
   replaceWord.setAttribute("id","newWord");
   window.actionbox.appendChild(replaceWord);
 
@@ -164,7 +165,8 @@ function playerSetup(){ //Sets up the Player's Interface
 }
 
 function firstReplacement(){ //This is going to display the first modified item in the JSON.stringify array from function donePOS();
-  let posDivVal = document.getElementById("posDiv");
-  let replacements = localStorage.getItem('relpacements');
-  posDivVal.innerHTML = "testPOS"; //Visits notes for more information
+  let newWord = document.getElementById("newWord");
+  let replacements = localStorage.getItem('replacements');
+  let posDiv = document.getElementById("posDiv");
+  posDiv.innerHTML = replacements[replaceIndex][2]; //Visits notes for more information
 }
